@@ -34,6 +34,7 @@ Route::group(["middleware" => ["auth"]], function () {
     Route::group(["middleware" => ["emailOtp"]], function () {
         Route::get('/home', [HomeController::class, "index"])->name('home');
         Route::get('logout', [AuthController::class, "logout"])->name('logout');
+        Route::get('logout', [AuthController::class, "logout"])->name('logout');
         // posts
         Route::resource('posts', PostController::class);
         Route::get('posts/category/{id}', [PostController::class, "postCategory"])->name("posts.category.show");
